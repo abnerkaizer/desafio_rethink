@@ -1,16 +1,18 @@
 const pessoas = [
-	{ name: "Fabiana", age: 33},
-	{ name: "Gabriel", age: 25},
-	{ name: "Fernando", age: 17},
-	{ name: "Ana", age: 2},
-	{ name: "Geralda", age: 93},
-	{ name: "Miguel", age: 70},
-	{ name: "Antonio", age: 69},
+	{ name: "Fabiana Araújo", age: 33},
+	{ name: "Gabriel Gomes", age: 25},
+	{ name: "Fernando Henrique", age: 17},
+	{ name: "Ana Luiza", age: 2},
+	{ name: "Geralda do Nascimento", age: 93},
+	{ name: "Miguel Souza", age: 70},
+	{ name: "Antonio Miguel", age: 69},
 ];
 
 
 
-for (let pessoa of pessoas) {   console.log(pessoa); }
+for (let pessoa of pessoas) {   
+	console.log(pessoa); 
+}
 
 name();
 function name(name){
@@ -38,21 +40,24 @@ function insertId(){
 	}
 }
 
-temIdade();
+
+console.log(temIdade());
 function temIdade(){ 	
+	var names = new Array()
 	for (let pessoa of pessoas) { 		
 		if (pessoa.age>=18) { 			
-			console.log(pessoa); 		
+			names.push(pessoa);
 		} 	
 	}
+	return names;
 }
 
-mediaIdade();
 
+console.log(mediaIdade());
 function mediaIdade(){
 	var soma = 0;
 	for (let pessoa of pessoas) {
 		soma += pessoa.age;
 	}
-	console.log(soma/pessoas.length);
+	return soma/pessoas.length;
 }
