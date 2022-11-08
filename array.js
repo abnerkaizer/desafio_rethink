@@ -1,3 +1,4 @@
+const form = document.querySelector("form");
 var pessoas = [
 	{ name: "Fabiana Araújo", age: 33},
 	{ name: "Gabriel Gomes", age: 25},
@@ -8,13 +9,14 @@ var pessoas = [
 	{ name: "Antonio Miguel", age: 69},
 ];
 
-function input(){
-	var aux = {name: document.getElementById("fullname").value, 
-	age: document.getElementById("age").value,
-	job: document.getElementById("job").value,
-	email: document.getElementById("email").value,
-	phone: document.getElementById("phonenumber").value,
-	date: document.getElementById("date").value};
+function input(e){
+	e.preventDefault();
+	var aux = {name: form.fullname.value, 
+	age: form.age.value,
+	job: form.job.value,
+	email: form.email.value,
+	phone: form.phonenumber.value,
+	date: form.date.value}
 	pessoas.push(aux);
 	getPessoas();
 }
@@ -66,3 +68,4 @@ function mediaIdade(){
 	}
 	return soma/pessoas.length;
 }
+form.addEventListener("submit",input);
